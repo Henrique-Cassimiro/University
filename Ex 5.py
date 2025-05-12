@@ -1,11 +1,15 @@
-'''Escreva um algoritmo que informe se um número digitado está compreendido entre 10 e 50, inclusive os
-dois. Caso não esteja no intervalo indicado, informe se o número vem antes ou depois deste'''
+'''Faça um algoritmo que leia um número e divida-o por dois (sucessivamente) até que
+o resultado seja menor que 1. Mostre o resultado da última divisão e a quantidade
+de divisões efetuadas'''
 
-numero = int(input("Digite um valor inteiro: "))
+numero = float(input("Digite um número: "))
+divisao = 99
+cont = 0
 
-if(numero > 9 and numero < 51):
-    print("O número está compreendido entre 10 e 50")
-elif(numero < 10 ):
-    print("O numero é menor que 10")
-else:
-    print("O número é maior que 50")
+while (divisao >= 1):
+    
+    divisao = numero/2    
+    numero = divisao
+    cont += 1
+    
+print(f"Houve {cont} divisões e o resultado da ultima divisão é: {divisao}")

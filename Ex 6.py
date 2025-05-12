@@ -1,28 +1,31 @@
-'''Escreva um algoritmo que leia três números e faça o seguinte:
-Caso todos os números sejam diferentes de zero:
-Apresente a mensagem “Todos os números são diferentes a zero”, e calcule o resultado a ser apresentado
-para o usuário da seguinte forma:
-• Se todos os números forem positivos: o resultado é o produto dos números;
-• Se pelo menos um número for positivo: o resultado é a soma dos números;
-• Se todos os números forem negativos: o resultado é a média dos números.
-• Caso contrário, informe ao usuário que todos os números devem ser diferentes de zero'''
+'''Foi feita uma pesquisa de audiência de canal de TV em várias casas de uma certa
+cidade, num determinado dia. Para cada casa visitada, foi fornecido o número do
+canal (4 ou 5) e a quantidade de pessoas que o estavam assistindo naquela casa.
+Se a televisão estivesse desligada, nada era anotado, ou seja, esta casa não entrava
+na pesquisa.
+Fazer um algoritmo que:
+- leia um número indeterminado de dados, sendo que o "FLAG" (condição de
+parada) corresponde ao número do canal igual a zero;
+- calcule e apresente:
+a) a quantidade de casas em que se assistia o canal 4;
+b) a quantidade de pessoas que assistiam o canal 5'''
 
-numero1 = int(input("Digite o primeiro número: "))
-numero2 = int(input("Digite o segundo número: "))
-numero3 = int(input("Digite o terceiro número: "))
+canal = ''
+canal4 = 0
+canal5 = 0
+Tv_ligada = ''
 
-if(numero1 != 0 and numero2 != 0 and numero3 != 0):
-    print("Todos os números são diferentes a zero")
+while (canal != "0" ):
+    Tv_ligada = input("A tv está ligada?\n")
+    if (Tv_ligada == "sim"):
+        canal = input("Qual o canal da residencia?\n")
+        quantidade = int(input("Digite a quantidade de pessoas assistindo: \n"))
+        if (canal == "4"):
+            canal4 = canal4 + quantidade
+        if (canal == "5"):
+            canal5 = canal5 + quantidade    
+    canal = input("Qual o canal da residencia?\n")
     
-    if(numero1 > 0 and numero2 > 0 and numero3 > 0):
-        resultado = numero1 *numero2 * numero3
-        print("O produto dos números é: ", resultado)
-    elif(numero1 > 0 or numero2 > 0 or numero3 > 0):
-        resultado = numero1 + numero2 + numero3
-        print("A soma dos números é: ", resultado)
-    elif(numero1 < 0 or numero2 < 0 or numero3 < 0):
-        resultado = (numero1 + numero2 + numero3) / 3
-        print("A média dos números é: ", resultado)
-else:
-    print("Todos os números devem ser diferentes de zero")
     
+    
+print(f" Foram {canal4} assistindo o canal 4 e {canal5} assistindo o canal 5")

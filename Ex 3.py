@@ -1,16 +1,40 @@
-'''Suponha que você trabalha em uma loja de eletrodomésticos e precisa desenvolver um programa que ajude
-a calcular o valor total de uma compra. O valor total da compra depende de alguns fatores, tais como a
-quantidade de produtos comprados e o valor unitário de cada produto. Além disso, a loja oferece um desconto
-de 10% para compras acima de R$ 1000,00'''
+'''Numa fábrica trabalham homens e mulheres divididos em duas classes:
+- A – os que fazem até 100 peças por mês;
+- B – os que fazem mais de 100 peças por mês.
+Os operários da classe ‘A’ recebem apenas o salário-mínimo mais 2.00 por peça e
+os operários da classe ‘B’ recebem salário-mínimo mais R$ 2.50 por peça.
+Fazer um algoritmo que:
+1 - Leia inicialmente o valor do salário-mínimo;
+2 - Leia várias linhas contendo o nome do operário e quantas peças ele fabricou no
+mês. A última linha, que servirá de flag (condição de parada), terá o nome do
+operário igual a “sair”.
+3 - Apresente a folha de pagamento do mês, com as seguintes informações:
+a. O nome, a classe e o salário de cada operário;
+b. O valor do maior salário;
+c. A somatória dos salários dos operários'''
 
-quantidade = int(input("Qual a quantidade de produtos comprados? "))
-valor = float(input("Qual o valor unitário de cada produto? "))
+salarioMinimo = float(input("Digite o valor do salario minimo:\n"))
+nome = input("Digite o nome do operario:\n")
+salarioFinal = 0
+classe = ""
+salarioMaior = 0
+salarioSoma = 0
 
-valorTotal = quantidade * valor
-
-if (valorTotal >= 1000):
-    valorDesconto = valorTotal - (valorTotal * (10/100))
-    print("O valor a ser pago é de: ", valorDesconto)
+while (nome != "sair"):
+    qntd_peças = int(input("Quantas peças esse operário fez?\n"))
+    if (qntd_peças <= 100):
+        classe = "A"
+        salarioFinal = (qntd_peças * 2) + salarioMinimo 
+    else:
+        classe = "B"
+        salarioFinal = (qntd_peças * 2.5) + salarioMinimo 
+        
+    if (salarioMaior < salarioFinal):
+        salarioMaior = salarioFinal
     
-else:
-    print("O valor a ser pago é de: ", valorTotal)
+    salarioSoma += salarioFinal
+        
+    print(f"O operário {nome} é da classe {classe} e seu salário é: {salarioFinal} ")
+    nome = input("Digite o nome do operario:\n")
+    
+print(f"O maior salário foi de: {salarioMaior}\nA somatoria dos salarios foi de: {salarioSoma}")

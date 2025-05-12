@@ -1,18 +1,11 @@
-'''Ler dois valores e um código de condição. Se o código for “c” os valores devem ser escritos em ordem
-crescente. Se o código for “d”, deve-se escrevê-los em ordem decrescente'''
+'''Escreva um algoritmo que informe se um número digitado está compreendido entre 10 e 50, inclusive os
+dois. Caso não esteja no intervalo indicado, informe se o número vem antes ou depois deste'''
 
-valor1 = int(input("Entre com o primeiro valor: "))
-valor2 = int(input("Entre com o segundo valor: "))
-codigo = input("Digite se o código é: d, ou se o código é: c: ")
+numero = int(input("Digite um valor inteiro: "))
 
-if (codigo == "c"):
-    if ( valor1 > valor2):
-        print(valor2 , valor1)
-    else:
-        print(valor1, valor2)
-        
+if(numero > 9 and numero < 51):
+    print("O número está compreendido entre 10 e 50")
+elif(numero < 10 ):
+    print("O numero é menor que 10")
 else:
-    if (valor1 > valor2):
-        print(valor1, valor2)
-    else:
-        print(valor2, valor1)
+    print("O número é maior que 50")

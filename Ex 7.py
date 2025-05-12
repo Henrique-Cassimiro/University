@@ -1,25 +1,28 @@
-'''Uma companhia de saneamento calcula o valor da conta de água de acordo com o tipo de consumidor:
-- Residencial: R$ 5.00 de taxa mais R$ 0.05 por m3 gasto;
-- Comercial: R$ 500.00 para os primeiros 80 m3, acrescido de R$ 0.25 por m3 gastos acima dos 80 m3;
-- Industrial: R$ 800.00 para os primeiros 100 m3, acrescido de R$ 0.04 por m3 gastos acima dos 100 m3.
-Baseando-se nessas informações, escreva um algoritmo que leia o tipo do cliente e o seu consumo de água
-em metros cúbicos. Depois, calcule e apresente a conta de água a ser paga pelo cliente'''
+'''Dados três valores A, B e C, verificar e informar se eles podem ser os comprimentos dos lados de um triângulo
+e, se forem, verificar se compõem um triângulo equilátero, isósceles ou escaleno, sendo que:
+- Triângulo é uma figura geométrica de três lados, onde cada lado é menor do que a soma dos outros
+dois.
+- Triângulo equilátero: três lados iguais.
+- Triângulo isósceles: dois lados iguais.
+- Triângulo escaleno: todos os lados diferentes.'''
 
-cliente = input("Declare seu perfil - r: para residencial, c: para comercial, i: para industrial:  ")
-metrosCubicos = float(input("Digite o valor gasto em metros cúbicos: "))
+ladoA = float(input("Digite o valor do primeiro lado: "))
+ladoB = float(input("Digite o valor do segundoo lado: "))
+ladoC = float(input("Digite o valor do terceiro lado: "))
 
-valorResidencial = 5 + (0.05 * metrosCubicos)
-valorComercial = 500 + (0.25 * metrosCubicos)
-valorIndustrial = 800 + (0.04 * metrosCubicos)
+verificaçãoA = ladoC + ladoB
+verificaçãoB = ladoA + ladoC
+verificaçãoC = ladoA + ladoB
 
-if (cliente == "r"):
+if(ladoA < verificaçãoA and ladoB < verificaçãoB and ladoC < verificaçãoC):
+    if(ladoA == ladoB and ladoB == ladoC):
+        print("É um triangulo equilátero")
+    elif((ladoA == ladoB or ladoB == ladoC or ladoC == ladoA) and ((ladoA != ladoB or ladoA != ladoC or ladoB != ladoC))):
+       print("É um triangulo isóceles")
+    else:
+        print("É um triangulo escaleno")
+       
     
-    print("A conta de água é: ", valorResidencial)
-    
-elif (cliente == "c"):
-    
-    print("A conta de água é: ", valorComercial)
-
 else:
-    
-    print("A conta de água é: ", valorIndustrial)
+    print("Não é um triangulo possível!")
+

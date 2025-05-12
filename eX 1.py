@@ -13,15 +13,15 @@ if (genero == "M" and turno == "M"):
     
     print("Bom dia, querido!")
     
-elif (genero == "F" and turno == "M"):
+if (genero == "F" and turno == "M"):
     
     print("Bom dia, querida!")
     
-elif (genero == "M" and turno == "V"):
+if (genero == "M" and turno == "V"):
     
     print("Bom tarde, querido!")
     
-else:
+if (genero == "F" and turno == "V"):
     
     print("Bom tarde, querida!")
     

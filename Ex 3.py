@@ -1,10 +1,15 @@
-nome = input("Qual o seu nome completo??" )
-email = input("Qual o seu email?" )
-print("Parabéns, ", nome, "  Seu cadastro foi realizado com sucesso e você ganhou um cupom de desconto de 10% para a sua primeira compra na TecnoPlus.")
-valorCompra = float(input("Qual o valor total da compra?"))
-valorDesconto = (valorCompra/10)
-valorFinal = valorCompra - valorDesconto
-print("O valor total da sua compra é:", valorCompra, ". Com o cupom de desconto, voce tera um desconto de: ", valorDesconto, "o valor final a ser pago é: ", valorFinal)
+'''Faça um programa que leia dois números e calcule a divisão do primeiro pelo segundo. Porém, se o usuário
+digitar zero para o segundo número, não realize o cálculo e apresente uma mensagem de erro “Não pode
+ser feita divisão por zero'''
 
+valor1 = int(input("Digite o primeiro valor: "))
+valor2 = int(input("Digite o segundo valor: "))
 
+if (valor2 == 0):
+    print("Não pode ser feito divisão por zero!")
+
+else:
+    divisão = valor1 / valor2
+    print("A divisão do primeiro valor pelo segundo valor é: ", divisão)
+    
 

@@ -1,7 +1,18 @@
-valorHoraTrabalho = int (input("Qual o  valor da hora trabalhada? "))
-horaTrabalhada = int(input("Quantas horas trabalhasdas na semana? "))
-desconto = float(input("Qual a porcentagem do desconto? "))
-salarioB = (valorHoraTrabalho * horaTrabalhada) * 4.5
-salarioD = salarioB - (salarioB * (desconto/100))
+'''Ler dois valores e um código de condição. Se o código for “c” os valores devem ser escritos em ordem
+crescente. Se o código for “d”, deve-se escrevê-los em ordem decrescente'''
 
-print("O salario bruto é: ", salarioB, " e o salario com desconto é: ", salarioD)
+valor1 = int(input("Entre com o primeiro valor: "))
+valor2 = int(input("Entre com o segundo valor: "))
+codigo = input("Digite se o código é: d, ou se o código é: c: ")
+
+if (codigo == "c"):
+    if ( valor1 > valor2):
+        print(valor2 , valor1)
+    else:
+        print(valor1, valor2)
+        
+else:
+    if (valor1 > valor2):
+        print(valor1, valor2)
+    else:
+        print(valor2, valor1)
